@@ -1,0 +1,33 @@
+# ============================================================
+# FILE: terraform-2tier-aws/.gitignore
+# PURPOSE: Prevents secrets and generated files from reaching GitHub
+# ============================================================
+
+# Terraform state files — contain secrets, never commit
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# tfvars files contain passwords and IPs
+terraform.tfvars
+*.auto.tfvars
+
+# Terraform internals
+.terraform/
+.terraform.lock.hcl
+crash.log
+crash.*.log
+
+# Sensitive override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore CLI config with credentials
+.terraformrc
+terraform.rc
+
+# OS artifacts
+.DS_Store
+Thumbs.db
