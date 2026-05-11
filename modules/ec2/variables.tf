@@ -17,3 +17,23 @@ variable "asg_min_size"         { type = number }
 variable "asg_max_size"         { type = number }
 variable "asg_desired_capacity" { type = number }
 variable "user_data_path"       { type = string }
+variable "db_host" {
+  description = "RDS endpoint"
+  type        = string
+}
+
+variable "db_name" {
+  description = "Database name"
+  type        = string
+}
+
+variable "db_username" {
+  description = "Database username"
+  type        = string
+}
+
+variable "db_password" {
+  description = "Database password"
+  type        = string
+  sensitive   = true
+}

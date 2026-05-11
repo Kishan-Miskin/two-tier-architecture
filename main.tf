@@ -79,6 +79,10 @@ module "ec2" {
   asg_max_size         = var.asg_max_size
   asg_desired_capacity = var.asg_desired_capacity
   user_data_path       = "${path.root}/scripts/user_data.sh"
+  db_host     = module.rds.db_host      # .address — host only, no :3306
+  db_name     = module.rds.db_name
+  db_username = module.rds.db_username
+  db_password = var.db_password# from terraform.tfvars
 }
 
 # ── RDS ──────────────────────────────────────────────────────
